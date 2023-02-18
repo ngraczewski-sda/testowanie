@@ -1,5 +1,9 @@
 # Instalacja `jest`
 
+Dodaj `jest` do projektu.
+
+## Pomoc
+
 Aby dodać framework `jest` do naszego projektu należy
 
 1. Dodać `jest` oraz `babel-jest` do listy zależności dla developmentu.
