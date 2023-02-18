@@ -34,4 +34,18 @@ Napisz test:
 - który sprawczy czy odźwierny opowiada poprawnie o braku spotkania
 - który sprawdzi czy odźwierny opowiada poprawnie o spotkaniu jednej osoby
 - który sprawdzi czy odźwierny opowiada poprawnie o spotkaniu dwóch osób
-- któ©y sprawdzi czy odźwierny opowiada poprawnie o spotkaniu trzech i więcej osób
+- który sprawdzi czy odźwierny opowiada poprawnie o spotkaniu trzech i więcej osób
+
+## Pomoc
+
+### Tworzenie obiektu klasy
+
+Aby utworzyć nowy obiekt klasy należy wywołać ją ze słowem kluczowym `new`.
+
+```js
+class Doorman {
+    ...
+}
+
+const doorman = new Doorman();
+```
