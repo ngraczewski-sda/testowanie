@@ -7,15 +7,6 @@ export const Section = (props) => {
   const collapse = () => setOpen(false);
   const expand = () => setOpen(true);
 
-  if (open) {
-    return (
-      <div>
-        <button onClick={collapse}>Collapse</button>
-        {children}
-      </div>
-    );
-  }
-
   return (
     <div>
       {open && <button onClick={collapse}>Collapse</button>}
