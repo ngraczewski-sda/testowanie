@@ -4,9 +4,9 @@ W repozytorium tym znajdują się materiały związane z blokiem "Testowanie" ku
 
 Repozytorium podzielone jest na 3 sekcje (katalogi):
 
-- jest
-- @testing-library/react
-- cypress
+- jest - materiały dla jest
+- rtl - materiały dla react-testing-library
+- cypress - materiały dla cypress
 
 W każdym katalogu znajduje się zbiór materiałów dla konkretnego narzędzia. W materiałach tych
 znajdują się zadania wraz z potrzebnym wprowadzeniem.
