@@ -29,3 +29,40 @@ Napisz testy, które:
 - zachowanie przycisku `Log in`, tj. czy jest disabled jeżeli nazwa użytkownika lub hasło nie
 
 Bonus, w kodzie znajduje się poważny błąd, czy wiesz jaki?
+
+## Pomoc
+
+### URL bazowy
+
+W pliku `cypress.config.js` można zdefiniować `baseUrl`, które będzie prefixować wszystkie URL używane w `.visit()` i `.request()`.
+
+```js
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    baseUrl: "https://login-page-peach-seven.vercel.app/",
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+});
+```
+
+Dzięki temu, zamiast odnosić się do pełnego URL, możemy skorzystać z patha.
+
+```js
+// Zamiast
+cy.visit("https://login-page-peach-seven.vercel.app/login");
+// Możemy
+cy.visit("/login");
+```
+
+### Sprawdzanie zmiany path
+
+Jeżeli chcemy sprawdzić czy zmienił sie URL możemy to zrobić w następujący sposób:
+
+```js
+cy.url().should("equal", "https://login-page-peach-seven.vercel.app/login");
+cy.url().should("include", "/login");
+```
