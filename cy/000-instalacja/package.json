@@ -1,0 +1,9 @@
+{
+  "name": "000-instalacja",
+  "version": "1.0.0",
+  "description": "Dodaj Cypress do projektu oraz skrypt do budowania testów oraz uruchamiania testów.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC"
+}
