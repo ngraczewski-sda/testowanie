@@ -1,4 +1,4 @@
-const { calculate } = require("./math");
+import { calculate } from "./math";
 
 describe("calculate", () => {
   it("should add numbers", () => {
@@ -8,7 +8,7 @@ describe("calculate", () => {
   });
 
   it("should subtract numbers", () => {
-    const result = calculate("-", 3, 2);
+    const result = calculate("-", 2, 1);
 
     expect(result).toBe(1);
   });
@@ -19,21 +19,27 @@ describe("calculate", () => {
     expect(result).toBe(12);
   });
 
-  it("should divide numbers", () => {
-    const result = calculate("/", 4, 2);
+  describe("divide", () => {
+    it("should divide by non-0 number", () => {
+      const result = calculate("/", 4, 2);
 
-    expect(result).toBe(2);
+      expect(result).toBe(2);
+    });
+
+    it("should throw exception if trying to divide by 0", () => {
+      const test = () => {
+        calculate("/", 4, 0);
+      };
+
+      expect(test).toThrow("Divisor must be non-0 value");
+    });
   });
 
-  it("should throw exception if dividing by 0", () => {
-    expect(() => {
-      calculate("/", 4, 0);
-    }).toThrow("Divisor must be non-0 value");
-  });
+  it("should throw exception if an unknown operation is given", () => {
+    const test = () => {
+      calculate("^", 1, 2);
+    };
 
-  it("should throw exception for unknown operation", () => {
-    expect(() => {
-      calculate("%", 4, 2);
-    }).toThrow("Unknown operation");
+    expect(test).toThrow("Unknown operation");
   });
 });

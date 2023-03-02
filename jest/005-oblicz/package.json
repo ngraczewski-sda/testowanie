@@ -4,7 +4,9 @@
   "description": "Funkcji `calculate` przyjmuje trzy argumenty",
   "main": "math.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:dev": "jest --watch"
   },
   "author": "",
   "license": "ISC",
