@@ -4,7 +4,8 @@
   "description": "",
   "main": "math.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:dev": "jest --watch"
   },
   "author": "",
   "license": "ISC",
