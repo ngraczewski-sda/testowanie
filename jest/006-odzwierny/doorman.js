@@ -1,16 +1,14 @@
 class Doorman {
-  constructor() {
-    this.names = [];
-  }
+  #names = [];
 
   greet(name) {
-    this.names.push(name);
+    this.#names.push(name);
 
     return `Hello ${name}!`;
   }
 
   tellMeWhomYouMet() {
-    const { names } = this;
+    const names = this.#names;
 
     if (!names.length) {
       return "I've met nobody.";
