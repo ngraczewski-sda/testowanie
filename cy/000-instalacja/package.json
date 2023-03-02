@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Dodaj Cypress do projektu oraz skrypt do budowania testów oraz uruchamiania testów.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
   "author": "",
   "license": "ISC"
 }
