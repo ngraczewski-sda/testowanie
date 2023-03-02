@@ -1,54 +1,56 @@
-const { Doorman } = require("./doorman");
+import { Doorman } from "./doorman";
 
 describe("Doorman", () => {
-  it("should greet a person", () => {
-    const doorman = new Doorman();
+  describe("greet", () => {
+    it("should greet person", () => {
+      const doorman = new Doorman();
 
-    const result = doorman.greet("Anka");
+      const result = doorman.greet("Bogdan");
 
-    expect(result).toBe("Hello Anka!");
+      expect(result).toBe("Hello Bogdan!");
+    });
   });
 
-  describe("tellMeWhoYouMet", () => {
-    it("should tell about nobody", () => {
+  describe("tellMeWhomYouMet", () => {
+    it("should tell about meeting nobody", () => {
       const doorman = new Doorman();
 
       const result = doorman.tellMeWhomYouMet();
 
-      expect(result).toBe("I've met nobody.");
+      expect(result).toBe(`I've met nobody.`);
     });
 
-    it("should tell about single person", () => {
+    it("should tell about meeting one person", () => {
       const doorman = new Doorman();
 
-      doorman.greet("Anka");
+      doorman.greet("Norman");
 
       const result = doorman.tellMeWhomYouMet();
 
-      expect(result).toBe("I've met Anka.");
+      expect(result).toBe(`I've met Norman.`);
     });
 
-    it("should tell about two people", () => {
+    it("should tell about meeting two people", () => {
       const doorman = new Doorman();
 
-      doorman.greet("Anka");
-      doorman.greet("Dawid");
+      doorman.greet("Anna");
+      doorman.greet("Jadwiga");
 
       const result = doorman.tellMeWhomYouMet();
 
-      expect(result).toBe("I've met Anka and Dawid.");
+      expect(result).toBe(`I've met Anna and Jadwiga.`);
     });
 
-    it("should tell about three people", () => {
+    it("should tell about meeting three or more people", () => {
       const doorman = new Doorman();
 
-      doorman.greet("Anka");
-      doorman.greet("Dawid");
-      doorman.greet("Alicja");
+      doorman.greet("Anna");
+      doorman.greet("Jadwiga");
+      doorman.greet("Alan");
 
       const result = doorman.tellMeWhomYouMet();
 
-      expect(result).toBe("I've met Anka, Dawid and Alicja.");
+      expect(result).toBe(`I've met Anna, Jadwiga and Alan.`);
     });
   });
 });
